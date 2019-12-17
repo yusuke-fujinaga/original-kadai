@@ -1,7 +1,13 @@
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  
+<% else %>
 <div class="center jumbotron" style="background-color:#f6efdb" style="margin-bottom:25px;">
   <div class="text-center" >
     <h1>Wineposts へようこそ！</h1>
     <div style="margin:15px;"><%= link_to '初めてご利用の方はコチラ', signup_path, class: 'btn btn-lg btn-primary' %></div>
-    <div style="margin:15px;"><%= link_to '登録済の方はコチラ', signup_path, class: 'btn btn-lg btn-primary' %></div>
+    <div style="margin:15px;"><%= link_to '登録済の方はコチラ', login_path, class: 'btn btn-lg btn-primary' %></div>
   </div>
 </div>
+
+<% end %>
