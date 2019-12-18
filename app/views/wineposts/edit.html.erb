@@ -1,0 +1,29 @@
+<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>
+
+<h1>id:<%= @winepost.id %> のWinepost編集ページ</h1>
+
+<%= form_with(model: @winepost, local: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :wine_type, 'ワインの種類は何ですか？' %>
+        <%= f.text_field :wine_type, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :grape_varieties, 'ブドウ品種は何が使われていますか？' %>
+        <%= f.text_field :grape_varieties, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :country, '生産国はどこですか？' %>
+        <%= f.text_field :country, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :review, 'レビューをどうぞ' %>
+        <%= f.text_field :review, class: 'form-control' %>
+      </div>
+
+      <%= f.submit '投稿' %>
+<% end %>
+
+<%= link_to '一覧に戻る', root_path %>

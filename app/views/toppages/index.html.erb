@@ -1,5 +1,11 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+
+<h1 style="text-align:center; margin:50px;">Wineposts</h1>
+
+<h2 style="text-align:center; margin:50px;"><%= link_to 'ワインを投稿する', new_winepost_path %></h2>
+
+  
+  <%= render 'wineposts/wineposts', wineposts: @wineposts %>
   
 <% else %>
 <div class="center jumbotron" style="background-color:#f6efdb" style="margin-bottom:25px;">
