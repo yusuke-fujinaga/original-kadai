@@ -1,6 +1,12 @@
 <h1>Winepost新規作成ページ</h1>
 
 <%= form_with(model: @winepost, local: true) do |f| %>
+
+      <div class="form-group">
+	      <%= f.label "画像をアップロード" %>
+	      <%= f.file_field :image %>
+	    </div>  
+
       <div class="form-group">
         <%= f.label :wine_type, 'ワインの種類は何ですか？' %>
         <%= f.text_field :wine_type, class: 'form-control' %>

@@ -9,4 +9,8 @@ class Winepost < ApplicationRecord
   has_many :reverses_of_favorite, class_name: 'favorite', foreign_key: 'winepost_id'
   has_many :liked, through: :reverses_of_favorite, source: :user
   
+  mount_uploader :image, ImageUploader
+  
 end
+
+

@@ -1,10 +1,41 @@
+<% if logged_in? %>
+
 <h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>
+
+<h1>id:<%= @winepost.id %> のWinepost詳細ページ</h1>
+
+<% if @winepost.image? %>
+    <%= image_tag @winepost.image.url %>
+<% end %>
+
+<p><%= @winepost.wine_type %></p>
+
+<%= render 'favorites/like_button', winepost: @winepost %>  
+
+<%= link_to '一覧に戻る', root_path %>
+<%= link_to 'このWinepostを編集する', edit_winepost_path(@winepost) %>
+<%= link_to 'このWinepostを削除する', @winepost, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+
+
+<% else %>
+
+<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>
+
+<% if @winepost.image? %>
+    <%= image_tag @winepost.image.url %>
+<% end %>
 
 <h1>id:<%= @winepost.id %> のWinepost詳細ページ</h1>
 
 <p><%= @winepost.wine_type %></p>
 
-<%= render 'favorites/like_button', winepost: @winepost %>  
 <%= link_to '一覧に戻る', root_path %>
-<%= link_to 'このWinepostを編集する', edit_winepost_path(@winepost) %>
-<%= link_to 'このWinepostを削除する', @winepost, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+
+<% end %>
+
+
+
+
+
+
+

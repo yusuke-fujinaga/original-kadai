@@ -1,5 +1,5 @@
 class WinepostsController < ApplicationController
-	before_action :require_user_logged_in
+	before_action :require_user_logged_in, only: [:new, :create, :edit, :update, :destroy]
 	
   def show
   	@winepost = Winepost.find(params[:id])
@@ -49,7 +49,7 @@ class WinepostsController < ApplicationController
   private
 
   def winepost_params
-    params.require(:winepost).permit(:wine_type, :grape_varieties, :country, :review)
+    params.require(:winepost).permit(:wine_type, :grape_varieties, :country, :review, :image)
   end
   
 end

@@ -7,6 +7,7 @@
           <%= link_to winepost.user.name, user_path(winepost.user) %> <span class="text-muted">posted at <%= winepost.created_at %></span>
         </div>
         <div>
+        	<p><%= image_tag winepost.image.url if winepost.image? %></p>
           <p><%= winepost.wine_type %></p>
           <p><%= winepost.grape_varieties %></p>
           <p><%= winepost.country %></p>
@@ -16,5 +17,6 @@
       </div>
     </li>
   <% end %>
-  <%= paginate wineposts %>
 </ul>
+
+<%= paginate wineposts %>
