@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_121204) do
+ActiveRecord::Schema.define(version: 2019_12_19_024425) do
+
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "winepost_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "winepost_id"], name: "index_favorites_on_user_id_and_winepost_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+    t.index ["winepost_id"], name: "index_favorites_on_winepost_id"
+  end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -41,6 +51,8 @@ ActiveRecord::Schema.define(version: 2019_12_18_121204) do
     t.index ["user_id"], name: "index_wineposts_on_user_id"
   end
 
+  add_foreign_key "favorites", "users"
+  add_foreign_key "favorites", "wineposts"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
   add_foreign_key "wineposts", "users"
