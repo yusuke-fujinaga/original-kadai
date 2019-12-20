@@ -9,17 +9,19 @@
 
       <div class="form-group">
         <%= f.label :wine_type, 'ワインの種類は何ですか？' %>
-        <%= f.text_field :wine_type, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :grape_varieties, 'ブドウ品種は何が使われていますか？' %>
-        <%= f.text_field :grape_varieties, class: 'form-control' %>
+        <%= f.select :wine_type, {赤ワイン:"赤ワイン", 白ワイン:"白ワイン",} %>
       </div>
 
       <div class="form-group">
         <%= f.label :country, '生産国はどこですか？' %>
-        <%= f.text_field :country, class: 'form-control' %>
+        <%= f.select :country, {イタリア:"イタリア", フランス:"フランス", ドイツ:"ドイツ",
+        スペイン:"スペイン", オーストリア:"オーストリア", ベルギー:"ベルギー", アメリカ:"アメリカ",
+        オーストラリア:"オーストラリア", ニュージーランド:"ニュージーランド", チリ:"チリ", 日本:"日本",} %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :grape_varieties, 'ブドウ品種は何が使われていますか？' %>
+        <%= f.text_field :grape_varieties, class: 'form-control' %>
       </div>
 
       <div class="form-group">

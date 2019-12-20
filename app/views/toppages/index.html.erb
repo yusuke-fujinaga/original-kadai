@@ -4,6 +4,11 @@
 
 <h2 style="text-align:center; margin:50px;"><%= link_to 'ワインを投稿する', new_winepost_path %></h2>
 
+<div style="text-align:center;">
+	<h4>ワインの種類で並び替え</h4>
+  <%= link_to "赤ワイン", root_path(wine_type: '赤ワイン') %>
+	<%= link_to "白ワイン", root_path(wine_type: '白ワイン') %>
+</div>
   
   <%= render 'wineposts/wineposts', wineposts: @wineposts %>
   
@@ -15,6 +20,13 @@
     <div style="margin:15px;"><%= link_to '登録済の方はコチラ', login_path, class: 'btn btn-lg btn-primary' %></div>
   </div>
 </div>
+
+<div style="text-align:center;">
+	<h4>ワインの種類で並び替え</h4>
+  <%= link_to "赤ワイン", root_path(wine_type: '赤ワイン') %>
+	<%= link_to "白ワイン", root_path(wine_type: '白ワイン') %>
+</div>
+  
 
  <%= render 'wineposts/wineposts', wineposts: @wineposts %>
 

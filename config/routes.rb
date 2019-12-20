@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :wineposts, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
+  
 end

@@ -1,5 +1,6 @@
 class WinepostsController < ApplicationController
 	before_action :require_user_logged_in, only: [:new, :create, :edit, :update, :destroy]
+	before_action :correct_user, only: [:destroy, :edit]
 	
   def show
   	@winepost = Winepost.find(params[:id])
@@ -39,8 +40,7 @@ class WinepostsController < ApplicationController
   end
 
   def destroy
-  	 @winepost = Winepost.find(params[:id])
-    @winepost.destroy
+  	@winepost.destroy
 
     flash[:success] = 'Winepost は正常に削除されました'
     redirect_to root_url
@@ -50,6 +50,13 @@ class WinepostsController < ApplicationController
 
   def winepost_params
     params.require(:winepost).permit(:wine_type, :grape_varieties, :country, :review, :image)
+  end
+  
+  def correct_user
+    @winepost = current_user.wineposts.find_by(id: params[:id])
+    unless @winepost
+      redirect_to root_url
+    end
   end
   
 end
