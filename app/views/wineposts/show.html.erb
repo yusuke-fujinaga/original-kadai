@@ -13,9 +13,11 @@
 <%= render 'favorites/like_button', winepost: @winepost %>  
 
 <%= link_to '一覧に戻る', root_path %>
-<%= link_to 'このWinepostを編集する', edit_winepost_path(@winepost) %>
-<%= link_to 'このWinepostを削除する', @winepost, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
 
+<% if @winepost.user == current_user %>
+	<%= link_to 'このWinepostを編集する', edit_winepost_path(@winepost) %>
+	<%= link_to 'このWinepostを削除する', @winepost, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<% end %>
 
 <% else %>
 

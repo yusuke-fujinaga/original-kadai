@@ -17,7 +17,6 @@ class WinepostsController < ApplicationController
   		flash[:success] = 'Winepost が正常に投稿されました'
       redirect_to @winepost
     else  
-    	@winepost = current_user.feed_wineposts.build(winepost_params)
     	flash.now[:danger] = 'Winepost が投稿されませんでした'
       render :new
     end

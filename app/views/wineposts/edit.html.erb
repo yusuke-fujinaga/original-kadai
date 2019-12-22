@@ -3,6 +3,7 @@
 <h1>id:<%= @winepost.id %> のWinepost編集ページ</h1>
 
 <%= form_with(model: @winepost, local: true) do |f| %>
+　　　<%= render 'layouts/error_messages', model: f.object %>
 
       <div class="form-group">
 	      <%= f.label "画像をアップロード" %>

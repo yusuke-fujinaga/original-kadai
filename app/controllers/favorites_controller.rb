@@ -5,13 +5,13 @@ class FavoritesController < ApplicationController
   	winepost = Winepost.find(params[:winepost_id])
     current_user.like(winepost)
     flash[:success] = '投稿をお気に入りに追加しました'
-    redirect_to root_path
+    redirect_to winepost_path(winepost)
   end
 
   def destroy
   	winepost = Winepost.find(params[:winepost_id])
     current_user.unlike(winepost)
     flash[:success] = '投稿をお気に入りから削除しました。'
-    redirect_to root_path
+    redirect_to winepost_path(winepost)
   end
 end
