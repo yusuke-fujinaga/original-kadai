@@ -61,3 +61,7 @@ gem 'carrierwave'
 gem 'rmagick'
 
 gem 'seed-fu'
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
