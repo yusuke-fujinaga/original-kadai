@@ -48,7 +48,7 @@ class WinepostsController < ApplicationController
   private
 
   def winepost_params
-    params.require(:winepost).permit(:wine_type, :grape_varieties, :country, :review, :image)
+    params.require(:winepost).permit(:wine_name, :grape_year, :wine_type, :grape_varieties, :country, :review, :image)
   end
   
   def correct_user

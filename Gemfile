@@ -65,3 +65,7 @@ gem 'seed-fu'
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
+
+# gem "select2-rails"
+
+# gem 'jquery-rails'

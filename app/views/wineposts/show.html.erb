@@ -1,37 +1,46 @@
 <% if logged_in? %>
 
-<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>
-
-<h1>id:<%= @winepost.id %> のWinepost詳細ページ</h1>
-
-<% if @winepost.image? %>
-    <%= image_tag @winepost.image.url %>
-<% end %>
-
-<p><%= @winepost.wine_type %></p>
-
-<%= render 'favorites/like_button', winepost: @winepost %>  
-
-<%= link_to '一覧に戻る', root_path %>
-
-<% if @winepost.user == current_user %>
-	<%= link_to 'このWinepostを編集する', edit_winepost_path(@winepost) %>
-	<%= link_to 'このWinepostを削除する', @winepost, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
-<% end %>
+	<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>
+	
+	<h1>id:<%= @winepost.id %> のWinepost詳細ページ</h1>
+	
+	<% if @winepost.image? %>
+	 <%= image_tag @winepost.image.url %>
+	<% else %>
+	 <%= image_tag "/assets/default.jpg", :size => '300x200' %>
+	<% end %>
+	
+	<p><%= @winepost.wine_name %></p>
+	<p><%= @winepost.grape_year %></p>
+	<p><%= @winepost.wine_type %></p>
+	<p><%= @winepost.country %></p>
+	<p><%= @winepost.grape_varieties %></p>
+	<p><%= @winepost.review %></p>
+	
+	<%= render 'favorites/like_button', winepost: @winepost %>  
+	
+	<%= link_to '一覧に戻る', root_path %>
+	
+	<% if @winepost.user == current_user %>
+		<%= link_to 'このWinepostを編集する', edit_winepost_path(@winepost) %>
+		<%= link_to 'このWinepostを削除する', @winepost, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+	<% end %>
 
 <% else %>
 
-<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>
-
-<% if @winepost.image? %>
-    <%= image_tag @winepost.image.url %>
-<% end %>
-
-<h1>id:<%= @winepost.id %> のWinepost詳細ページ</h1>
-
-<p><%= @winepost.wine_type %></p>
-
-<%= link_to '一覧に戻る', root_path %>
+	<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>
+	
+	<% if @winepost.image? %>
+	 <%= image_tag @winepost.image.url %>
+	<% else %>
+	 <%= image_tag "/assets/default.jpg", :size => '300x200' %>
+	<% end %>
+	
+	<h1>id:<%= @winepost.id %> のWinepost詳細ページ</h1>
+	
+	<p><%= @winepost.wine_type %></p>
+	
+	<%= link_to '一覧に戻る', root_path %>
 
 <% end %>
 

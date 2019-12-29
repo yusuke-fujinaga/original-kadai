@@ -1,6 +1,11 @@
 class Winepost < ApplicationRecord
+	
+	default_scope -> { order(created_at: :desc) }
+	
   belongs_to :user
   
+  validates :wine_name, presence: true, length: { maximum: 255 }
+  validates :grape_year, presence: true, length: { maximum: 255 }
   validates :wine_type, presence: true, length: { maximum: 255 }
   validates :grape_varieties, presence: true, length: { maximum: 255 }
   validates :country, presence: true, length: { maximum: 255 }
