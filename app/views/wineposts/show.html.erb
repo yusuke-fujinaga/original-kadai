@@ -1,48 +1,74 @@
-<% if logged_in? %>
+<div class="new-title">
+ <h1>詳細ページ</h1>
+</div>	
 
-	<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>
-	
-	<h1>id:<%= @winepost.id %> のWinepost詳細ページ</h1>
-	
-	<% if @winepost.image? %>
-	 <%= image_tag @winepost.image.url %>
-	<% else %>
-	 <%= image_tag "/assets/default.jpg", :size => '300x200' %>
-	<% end %>
-	
-	<p><%= @winepost.wine_name %></p>
-	<p><%= @winepost.grape_year %></p>
-	<p><%= @winepost.wine_type %></p>
-	<p><%= @winepost.country %></p>
-	<p><%= @winepost.grape_varieties %></p>
-	<p><%= @winepost.review %></p>
-	
-	<%= render 'favorites/like_button', winepost: @winepost %>  
-	
-	<%= link_to '一覧に戻る', root_path %>
-	
-	<% if @winepost.user == current_user %>
-		<%= link_to 'このWinepostを編集する', edit_winepost_path(@winepost) %>
-		<%= link_to 'このWinepostを削除する', @winepost, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
-	<% end %>
+<div class="row" style="margin-bottom:100px;">
+  <div class="col-sm-6 offset-sm-3">		
+		
+		<% if logged_in? %>
+			
+			<div class="show-img">
+				<% if @winepost.image? %>
+				 <%= image_tag @winepost.image.url, :size => '300x300' %>
+				<% else %>
+				 <%= image_tag "/assets/default.jpg", :size => '300x300' %>
+				<% end %>
+			</div>
+			
+			<div class="show-item">
+				<p>・Posted_by：　<%= link_to @winepost.user.name, user_path(@winepost.user) %> </p>
+				<p>・Wine_name：　<%= @winepost.wine_name %></p>
+				<p>・Wine_type：　<%= @winepost.wine_type %></p>
+				<p>・Grape_varieties：　<%= @winepost.grape_varieties %></p>
+				<p>・Grape_year：　<%= @winepost.grape_year %></p>
+				<p>・Country of origin：　<%= @winepost.country %></p>
+				<p>・Review：　<%= @winepost.review %></p>
+			</div>
+			
+			<div class="like-button">
+				<%= render 'favorites/like_button', winepost: @winepost %>  
+			</div>
+			
+			<div class="return-button">
+	 　　<%= link_to '一覧に戻る', root_path %>
+	 　 </div>　
+			
+			<% if @winepost.user == current_user %>
+			  <div class="return-button" style="margin-top: 0px;">
+					<%= link_to 'このWinepostを編集する', edit_winepost_path(@winepost) %>
+				</div>
+				<div class="return-button">
+					<%= link_to 'このWinepostを削除する', @winepost, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+				</div>	
+			<% end %>
+		
+		<% else %>
+		
+		  <div class="show-img">
+				<% if @winepost.image? %>
+				 <%= image_tag @winepost.image.url, :size => '300x300'  %>
+				<% else %>
+				 <%= image_tag "/assets/default.jpg", :size => '300x300' %>
+				<% end %>
+			</div>
+			
+			<div class="show-item">
+				<p>・Posted_by：　<%= link_to @winepost.user.name, user_path(@winepost.user) %> </p>
+				<p>・Wine_name：　<%= @winepost.wine_name %></p>
+				<p>・Wine_type：　<%= @winepost.wine_type %></p>
+				<p>・Grape_varieties：　<%= @winepost.grape_varieties %></p>
+				<p>・Grape_year：　<%= @winepost.grape_year %></p>
+				<p>・Country of origin：　<%= @winepost.country %></p>
+				<p>・Review：　<%= @winepost.review %></p>
+			</div>
 
-<% else %>
-
-	<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>
-	
-	<% if @winepost.image? %>
-	 <%= image_tag @winepost.image.url %>
-	<% else %>
-	 <%= image_tag "/assets/default.jpg", :size => '300x200' %>
-	<% end %>
-	
-	<h1>id:<%= @winepost.id %> のWinepost詳細ページ</h1>
-	
-	<p><%= @winepost.wine_type %></p>
-	
-	<%= link_to '一覧に戻る', root_path %>
-
-<% end %>
+			<div class="return-button">
+	 　　<%= link_to '一覧に戻る', root_path %>
+	 　 </div>　
+		
+		<% end %>
+	</div>
+</div>	
 
 
 

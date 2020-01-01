@@ -1,41 +1,72 @@
-<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>
+<!--<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>-->
+<div class="new-title">
+ <h1>Winepost編集ページ</h1>
+</div>
 
-<h1>id:<%= @winepost.id %> のWinepost編集ページ</h1>
 
-<%= form_with(model: @winepost, local: true) do |f| %>
-　　　<%= render 'layouts/error_messages', model: f.object %>
+<div class="row" style="margin-bottom:100px;">
+  <div class="col-sm-6 offset-sm-3">
+  	
+	<%= form_with(model: @winepost, local: true) do |f| %>
+		<%= render 'layouts/error_messages', model: f.object %>
 
-      <div class="form-group">
-	      <%= f.label "画像をアップロード" %>
-	      <%= f.file_field :image %>
-	    </div>
-	    
-	     <div class="form-group">
-        <%= f.label :wine_name, 'ワインの名前をご記入ください' %>
-        <%= f.text_field :wine_name, class: 'form-control' %>
+    <div class="form-group">
+    	<div>
+      	<%= f.label "・画像をお選びください(画像が無くても構いません。)" %>
       </div>
+      <div>
+      	<%= f.file_field :image %>
+      </div>	
+    </div>  
+    
+    <div class="form-group">
+      <div><%= f.label :wine_name, '・ワインの名前をご記入ください' %></div>
+      <div><%= f.text_field :wine_name, class: 'form-control' %></div
+    </div>
 
-      <div class="form-group">
-        <%= f.label :wine_type, 'ワインの種類は何ですか？' %>
-        <%= f.select :wine_type, {赤ワイン:"赤ワイン", 白ワイン:"白ワイン", オレンジワイン:"オレンジワイン", ロゼワイン:"ロゼワイン",} %>
-      </div>
+    <div class="form-group">
+      <div><%= f.label :wine_type, '・ワインの種類は何ですか？' %></div>
+      <div><%= f.select :wine_type, {赤ワイン:"赤ワイン", 白ワイン:"白ワイン", オレンジワイン:"オレンジワイン", ロゼワイン:"ロゼワイン",} %></div>
+    </div>
 
-      <div class="form-group">
-        <%= f.label :grape_varieties, 'ブドウ品種は何が使われていますか？' %>
-        <%= f.text_field :grape_varieties, class: 'form-control' %>
-      </div>
+    <div class="form-group">
+      <div><%= f.label :country, '・生産国はどこですか？' %></div>
+      <div><%= f.select :country, {イタリア:"イタリア", フランス:"フランス", ドイツ:"ドイツ",
+      スペイン:"スペイン", オーストリア:"オーストリア", ベルギー:"ベルギー", アメリカ:"アメリカ",
+      オーストラリア:"オーストラリア", ニュージーランド:"ニュージーランド", チリ:"チリ", 日本:"日本", その他:"その他", } %></div>
+    </div>
+    
+    <div class="form-group">
+      <div><%= f.label :grape_varieties, '・ブドウ品種は何が使われていますか？' %></div>
+      <div><%= f.select :grape_varieties, { カベルネ・ソーヴィニョン:"カベルネ・ソーヴィニョン", ピノ・ノワール:"ピノ・ノワール", 
+      シラー:"シラー", メルロー:"メルロー", サンジョヴェーゼ:"サンジョヴェーゼ", カルメネール:"カルメネール", ネッビオーロ:"ネッビオーロ",
+      シャルドネ:"シャルドネ", リースリング:"リースリング", ソーヴィニヨン・ブラン:"ソーヴィニヨン・ブラン", モスカート:"モスカート",
+      ピノ・グリ:"ピノ・グリ", ヴィオニエ:"ヴィオニエ", 甲州:"甲州", その他:"その他",} %></div>
+    </div>
+    
+    <div class="form-group">
+      <div><%= f.label :grape_year, '・ブドウの収穫は何年ですか？？' %></div>
+      <div><%= f.select :grape_year, {"1990":"1990", "1991":"1991", "1992":"1992", "1993":"1993","1994":"1994", "1995":"1995", "1996":"1996", "1997":"1997",
+      "1998":"1998", "1999":"1999", "2000":"2000", "2001":"2001", "2002":"2002", "2003":"2003", "2004":"2004", "2005":"2005",
+      "2006":"2006", "2007":"2007", "2008":"2008", "2009":"2009", "2010":"2010", "2011":"2011", "2012":"2012", "2013":"2013", "2014":"2014",
+      "2015":"2015","2016":"2016","2017":"2017","2018":"2018","2019":"2019",} %></div>
+    </div>
 
-      <div class="form-group">
-        <%= f.label :country, '生産国はどこですか？' %>
-        <%= f.text_field :country, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :review, 'レビューをどうぞ' %>
-        <%= f.text_field :review, class: 'form-control' %>
-      </div>
-
-      <%= f.submit '投稿' %>
-<% end %>
-
-<%= link_to '一覧に戻る', root_path %>
+    <div class="form-group">
+      <%= f.label :review, '・味の感想をご記入ください' %>
+      <%= f.text_field :review, class: 'form-control' %>
+    </div>
+　　
+　　<div class="submit-button">
+    	<%= f.submit '再投稿する！' %>
+    </div>
+    
+	<% end %>
+	
+ </div>
+ 
+ <div class="return-button">
+ 　<%= link_to '一覧に戻る', root_path %>
+ </div>
+ 
+</div>	

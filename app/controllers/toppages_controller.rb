@@ -25,14 +25,19 @@ class ToppagesController < ApplicationController
 			
 			if wine_type == nil 
 			 @wineposts = Winepost.all.page(params[:page]).per(9)
+			 @text = '投稿一覧'
 			elsif wine_type == '赤ワイン'
 			 @wineposts = Winepost.where(wine_type: '赤ワイン').page(params[:page]).per(9)
+			 @text = '赤ワイン一覧'
 			elsif wine_type == '白ワイン'
 			 @wineposts = Winepost.where(wine_type: '白ワイン').page(params[:page]).per(9)
+			 @text = '白ワイン一覧'
 			elsif wine_type == 'オレンジワイン'
 			 @wineposts = Winepost.where(wine_type: 'オレンジワイン').page(params[:page]).per(9) 
+			 @text = 'オレンジワイン一覧'
 			elsif wine_type == 'ロゼワイン'
-			 @wineposts = Winepost.where(wine_type: 'ロゼワイン').page(params[:page]).per(9)  
+			 @wineposts = Winepost.where(wine_type: 'ロゼワイン').page(params[:page]).per(9) 
+			 @text = 'オレンジワイン一覧'
 			end
 		end	
 	end

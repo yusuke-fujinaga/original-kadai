@@ -4,7 +4,7 @@ class Winepost < ApplicationRecord
 	
   belongs_to :user
   
-  validates :wine_name, presence: true, length: { maximum: 255 }
+  validates :wine_name, presence: true, length: { maximum: 25 }
   validates :grape_year, presence: true, length: { maximum: 255 }
   validates :wine_type, presence: true, length: { maximum: 255 }
   validates :grape_varieties, presence: true, length: { maximum: 255 }

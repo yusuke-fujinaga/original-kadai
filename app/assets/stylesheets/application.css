@@ -1,15 +1,198 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
+.container {
+	padding: 0;
+}
 
- */
- 
+/*toppages css*/
+
+.page-title {
+	text-align: center;
+	margin-bottom:60px;
+	margin-top: 60px;
+	color: black;
+	font-size: 65px;
+}
+
+.link {
+	margin-top: 155px;
+}
+
+.button {
+	text-align: center;
+	margin:50px;
+	font-size: 20px;
+}
+
+.jumbotron {
+	background-color: #fff;
+	margin-top: 50px;
+	/*padding-bottom: 20px;*/
+	height: 500px;
+	padding-top: 80px;
+}
+
+.header {
+	margin-bottom: 0px;
+}
+
+.subtitle {
+	text-align: center;
+	margin-top: 100px;
+	/*font-size: 60px;*/
+	height: 65px;
+}
+
+h2 .subtitle {
+	/*font-size: 60px;*/
+	/*height: 70px;*/
+}
+
+.menu {
+	height: 100px;
+	margin-top: 20px;
+}
+
+.submenu1 {
+	height:30px;
+	font-size: 2rem;
+	/*background-color: ;*/
+	/*margin-bottom: 15px;*/
+}
+
+.submenu2 {
+	/*margin-top: 20px;*/
+}
+
+
+/*winepostページ*/
+
+.button {
+	margin-bottom: 60px;
+	margin-top: 60px;
+}
+
+.grid {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.item {
+	border: 1px solid rgba(221,221,221,.5);
+	/*background-color: rgba(221,221,221,.2);*/
+	height: 375px;
+	width: 375px;
+}
+
+.pagenatediv {
+	/*text-align: center;*/
+	margin-top: 40px;
+}
+
+/*それぞれのitem*/
+
+.username-name {
+	font-size: 22px;
+	padding-left: 100px;
+	padding-top: 8px;
+}
+
+.media-body {
+	width: 300px;
+}
+
+.mr-2 {
+	padding-left: 10px;
+	margin-right: 0px;
+	padding-top: 10px;
+}
+
+.wine-img {
+	padding-top: 10px;
+	/*text-align: center;*/
+	padding-left: 18px;
+}
+
+
+
+.wine-name-type {
+	text-align: left;
+	width: 320px;
+}
+
+.wine-name-type p {
+	margin-bottom: 3px;
+	font-size: 15px;
+}
+
+.linktag {
+	text-align: center;
+	font-size: 20px;
+	margin: 0 100px;
+	background-color: rgba(221,221,221,.2);
+}
+
+.media.mb-3 div {
+	margin-bottom: 0px;
+}
+
+
+/*プロフィールページ*/
+
+.user-profile-name {
+	font-size: 40px;
+	text-align: center;
+}
+
+.card-body {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.follow-button {
+	text-align: center;
+	margin: 0 460px 40px 460px;
+}
+
+
+/*新規投稿作成ページ*/
+
+.new-title {
+	text-align: center;
+  margin-bottom: 60px;
+	margin-top: 60px;
+}
+
+.submit-button {
+	text-align: center;
+	width: 200px;
+	margin: auto;
+}
+
+.return-button {
+	text-align: center;
+	height: 40px;
+	font-size: 20px;
+	width: 400px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+
+/*詳細ページ*/
+
+.show-img {
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+
+.like-button {
+	width: 300px;
+	margin: auto;
+}
+
+.show-item {
+ padding: 20px;
+ font-size: 18px;
+ padding-left: 60px;
+}

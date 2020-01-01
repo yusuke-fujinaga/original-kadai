@@ -15,7 +15,7 @@ class WinepostsController < ApplicationController
   	
   	if @winepost.save
   		flash[:success] = 'Winepost が正常に投稿されました'
-      redirect_to @winepost
+      redirect_to root_path
     else  
     	flash.now[:danger] = 'Winepost が投稿されませんでした'
       render :new

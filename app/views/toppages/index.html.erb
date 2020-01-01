@@ -1,43 +1,60 @@
 <% if logged_in? %>
 
-	<h1 style="text-align:center; margin:50px;">Wineposts</h1>
+	<!--<h1 style="text-align:center;">Wineposts</h1>-->
 	
-	<h2 style="text-align:center; margin:50px;"><%= link_to 'ワインを投稿する', new_winepost_path %></h2>
-	
-	<div style="text-align:center;">
-		<h4>ワインの種類で絞り込み</h4>
-	  <%= link_to "赤ワイン", root_path(wine_type: '赤ワイン') %>
-		<%= link_to "白ワイン", root_path(wine_type: '白ワイン') %>
-		<%= link_to "オレンジワイン", root_path(wine_type: 'オレンジワイン') %>
-		<%= link_to "ロゼワイン", root_path(wine_type: 'ロゼワイン') %>
+	<div class="subtitle">
+		<h1><%= render 'layouts/massage'%></h1>
 	</div>
 	
-	<div style="text-align:center;">
-		<h2><%= render 'layouts/massage'%></h2>
+	<div class="menu" style="text-align:center;">
+		<div class="submenu1">
+		 	<h5>ワインの種類で絞り込み</h5>
+		</div>
+		<div class="submenu2">
+		  <%= link_to "赤ワイン", root_path(wine_type: '赤ワイン') %>
+			<%= link_to "白ワイン", root_path(wine_type: '白ワイン') %>
+			<%= link_to "オレンジワイン", root_path(wine_type: 'オレンジワイン') %>
+			<%= link_to "ロゼワイン", root_path(wine_type: 'ロゼワイン') %>
+		</div>
 	</div>
 	
 	 <%= render 'wineposts/wineposts', wineposts: @wineposts %>
+	 
+	
+		<div class="button">
+			<p>あなたも飲んだワインを投稿してみませんか？</p>
+			<h2><%= link_to 'ワインを投稿する', new_winepost_path %></h2>
+		</div> 
   
 
 <% else %>
 
-	<div class="center jumbotron" style="background-color:#f6efdb" style="margin-bottom:25px;">
+	<div class="center jumbotron">
 	  <div class="text-center" >
-	    <h1>Wineposts へようこそ！</h1>
-	    <div style="margin:15px;"><%= link_to '初めてご利用の方はコチラ', signup_path, class: 'btn btn-lg btn-primary' %></div>
-	    <div style="margin:15px;"><%= link_to '登録済の方はコチラ', login_path, class: 'btn btn-lg btn-primary' %></div>
+	    <h1 class="page-title">Wineposts へようこそ！</h1>
+	    <div class="link">
+		    <div style="margin:15px;"><%= link_to '初めてご利用の方はコチラ', signup_path, class: 'btn btn-lg btn-primary' %></div>
+		    <div style="margin:15px;"><%= link_to '登録済の方はコチラ', login_path, class: 'btn btn-lg btn-primary' %></div>
+	    </div>
 	  </div>
 	</div>
 	
-	<div style="text-align:center;">
-		<h4>ワインの種類で絞り込み</h4>
-	  <%= link_to "赤ワイン", root_path(wine_type: '赤ワイン') %>
-		<%= link_to "白ワイン", root_path(wine_type: '白ワイン') %>
-		<%= link_to "オレンジワイン", root_path(wine_type: 'オレンジワイン') %>
-		<%= link_to "ロゼワイン", root_path(wine_type: 'ロゼワイン') %>
+	<div class="subtitle">
+	 <h1><%= render 'layouts/massage'%></h1>
 	</div>
-	  
 	
-	 <%= render 'wineposts/wineposts', wineposts: @wineposts %>
+	<div class="menu" style="text-align:center;">
+		<div class="submenu1">
+		 	<h5>ワインの種類で絞り込み</h5>
+		</div>
+		<div class="submenu2">
+		  <%= link_to "赤ワイン", root_path(wine_type: '赤ワイン') %>
+			<%= link_to "白ワイン", root_path(wine_type: '白ワイン') %>
+			<%= link_to "オレンジワイン", root_path(wine_type: 'オレンジワイン') %>
+			<%= link_to "ロゼワイン", root_path(wine_type: 'ロゼワイン') %>
+		</div>
+	</div>
+	
+	<%= render 'wineposts/wineposts', wineposts: @wineposts %>
 
 <% end %>
