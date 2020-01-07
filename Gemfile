@@ -69,3 +69,5 @@ end
 # gem "select2-rails"
 
 # gem 'jquery-rails'
+
+gem 'fog-aws'
