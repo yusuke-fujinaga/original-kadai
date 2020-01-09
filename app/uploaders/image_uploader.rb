@@ -32,7 +32,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   def default_url(*args) # コメントアウトを外す
       # For Rails 3.1+ asset pipeline compatibility:
       # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-     "/images/default.jpg" # 書き加える
+     "default.jpg" # 書き加える
       # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end # コメントアウトを外す
 
