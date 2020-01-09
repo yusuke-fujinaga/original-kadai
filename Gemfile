@@ -71,3 +71,5 @@ end
 # gem 'jquery-rails'
 
 gem 'fog-aws'
+
+# gem update

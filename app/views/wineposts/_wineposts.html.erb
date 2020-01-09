@@ -9,7 +9,7 @@
 						  <% if winepost.image? %>
 						   <%= image_tag winepost.image.url,  :size => '210x210' %>
 						  <% else %> 
-						   <%= image_tag asset_path("/assets/default.jpg", :size => '210x210') %>
+						   <%= image_tag "/assets/default.jpg", :size => '210x210' %>
 						  <% end %> 
 						</p>
 					</div>
