@@ -13,11 +13,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   storage :fog
   # end
   
-  # if Rails.env.production?
-  #   storage :fog
-  # else
-  #   storage :file
-  # end
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
   
   # storage :file
   # storage :fog
@@ -33,7 +33,7 @@ class ImageUploader < CarrierWave::Uploader::Base
       # For Rails 3.1+ asset pipeline compatibility:
       # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
      #"/default.png" # 書き加える
-      "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+      "/images/fallback/" + [v/ersion_name, "default.png"].compact.join('_')
   end # コメントアウトを外す
 
   # Process files as they are uploaded:
