@@ -13,6 +13,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   storage :fog
   # end
   
+  # if Rails.env.production? || Rails.env.staging?
+  #   storage :fog
+  # else
+  #   storage :file
+  # end
+  
   # if Rails.env.production?
   #   storage :fog
   # else
@@ -20,7 +26,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
   
   # storage :file
-  # storage :fog
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -29,7 +35,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  def default_url(*args) # コメントアウトを外す
+  def default_url # コメントアウトを外す
       # For Rails 3.1+ asset pipeline compatibility:
       # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
      "default.jpg" # 書き加える
