@@ -99,6 +99,12 @@ class ImageUploader < CarrierWave::Uploader::Base
     name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
     name.downcase
   end
+  
+  def auto
+    manipulate! do|image|
+      image.auto_orient
+    end
+  end
 
  
   
