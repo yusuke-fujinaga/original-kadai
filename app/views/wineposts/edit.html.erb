@@ -1,10 +1,10 @@
 <!--<h1>ユーザ名：<%= link_to @winepost.user.name, user_path(@winepost.user) %> </h1>-->
 <div class="new-title">
- <h1>Winepost編集ページ</h1>
+ <h1>Edit page</h1>
 </div>
 
 
-<div class="row" style="margin-bottom:100px;">
+<div class="newform row" style="margin-bottom:100px;">
   <div class="col-sm-6 offset-sm-3">
   	
 	<%= form_with(model: @winepost, local: true) do |f| %>
@@ -12,7 +12,7 @@
 
     <div class="form-group">
     	<div>
-      	<%= f.label "・画像をお選びください(画像が無くても構いません。)" %>
+      	<%= f.label "・画像をお選びください" %>
       </div>
       <div>
       	<%= f.file_field :image %>
@@ -65,7 +65,7 @@
 	
  </div>
  
- <div class="return-button">
+ <div class="return-button3">
  　<%= link_to '一覧に戻る', root_path %>
  </div>
  

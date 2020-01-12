@@ -1,5 +1,5 @@
 <div class="new-title">
- <h1>詳細ページ</h1>
+ <h1>Post page</h1>
 </div>	
 
 <div class="row" style="margin-bottom:100px;">
@@ -34,10 +34,10 @@
 	 　 </div>　
 			
 			<% if @winepost.user == current_user %>
-			  <div class="return-button" style="margin-top: 0px;">
+			  <div class="return-button2" style="margin-top: 0px;">
 					<%= link_to 'このWinepostを編集する', edit_winepost_path(@winepost) %>
 				</div>
-				<div class="return-button">
+				<div class="return-button2">
 					<%= link_to 'このWinepostを削除する', @winepost, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
 				</div>	
 			<% end %>
