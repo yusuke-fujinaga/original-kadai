@@ -100,11 +100,20 @@ class ImageUploader < CarrierWave::Uploader::Base
     name.downcase
   end
   
-  def auto
-    manipulate! do|image|
-      image.auto_orient
-    end
-  end
+  # def auto
+  #   manipulate! do|image|
+  #     image.auto_orient
+  #   end
+  # end
+  
+  process :fix_exif_rotation                                                                                                           
+     def fix_exif_rotation
+        manipulate! do |img|
+        img.auto_orient!
+        img = yield(img) if block_given?
+        img 
+　　　　end 
+      end
 
  
   
