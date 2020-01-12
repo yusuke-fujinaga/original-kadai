@@ -225,6 +225,13 @@ h2 .subtitle {
 }
 
 
+/*ログインページ*/
+
+.newuser {
+	margin-top: 20px;
+	text-align: center;
+}  	
+
 
 /*スマートフォンサイズ用レイアウト*/
 
@@ -235,6 +242,10 @@ h2 .subtitle {
 		margin-top: 60px;
 		color: black;
 		font-size: 32px;
+  }
+  
+  .page-title2{
+  	font-size: 15px;
   }
   
   .link {
@@ -278,5 +289,41 @@ h2 .subtitle {
   .winetype {
   	margin: 0;
   	font-size: 15px;
+  }
+  
+  .login {
+  	font-size: 30px;
+  }
+  
+  .newform {
+  	padding: 30px;
+  }
+  
+  .newuser {
+  	margin-top: 20px;
+  	text-align: center;
+  }
+  
+  .button p {
+  	font-size: 16px;
+  }
+  
+  .nav-item {
+  	font-size: 10px;
+  }
+  
+  .rounded {
+  	width: 180px;
+  }
+  
+  .card-title {
+  	font-size: 30px;
+  }
+  
+  .follow-button {
+  	width: 180px;
+  	margin: auto;
+  	margin-bottom: 30px;
+  	text-align: center;
   }
 }

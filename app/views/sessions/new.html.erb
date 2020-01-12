@@ -1,14 +1,14 @@
 <div class="text-center" style="margin-top:50px;">
-	<h1>Winepostsへようこそ！</h1>
-	<h2 style="margin-top:50px;">　飲んだワインを投稿して仲間と共有しましょう。</h2>
-	<h2 style="margin-top:20px;">楽しいワインライフの始まりです！</h2>
+	<h1 class="page-title">Winepostsへようこそ！</h1>
+	<h2 class="page-title2" style="margin-top:50px;">　飲んだワインを投稿して仲間と共有しましょう。</h2>
+	<h2 class="page-title2" style="margin-top:20px;">楽しいワインライフの始まりです！</h2>
 </div>
 
 <div class="text-center" style="margin-top:50px;">
-  <h1>Log in</h1>
+  <h1 class="login">Log in</h1>
 </div>
 
-<div class="row">
+<div class="newform row" style="margin-bottom:100px;">
   <div class="col-sm-6 offset-sm-3">
 
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
@@ -25,7 +25,8 @@
 
       <%= f.submit 'Log in', class: 'btn btn-primary btn-block' %>
     <% end %>
-
-    <p>New user? <%= link_to 'Sign up now!', signup_path %></p>
+    <div class="newuser">
+    	<p>New user? <%= link_to 'Sign up now!', signup_path %></p>
+    </div>	
   </div>
 </div>
