@@ -173,6 +173,12 @@ h2 .subtitle {
 
 /*プロフィールページ*/
 
+/*.follow-b {*/
+	/*text-align: center;*/
+/*	margin: 0;*/
+/*	width: 200px;*/
+/*}*/
+
 .user-profile-name {
 	font-size: 40px;
 	text-align: center;
@@ -185,7 +191,9 @@ h2 .subtitle {
 
 .follow-button {
 	text-align: center;
-	margin: 0 460px 40px 460px;
+	margin: auto;
+	margin-bottom: 40px;
+	width: 200px;
 }
 
 

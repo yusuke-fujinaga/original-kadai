@@ -73,3 +73,7 @@ end
 gem 'fog-aws'
 
 # gem update
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
